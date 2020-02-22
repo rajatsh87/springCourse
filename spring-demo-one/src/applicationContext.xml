@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Loading properties file sport.properties -->
+	<context:property-placeholder location="classpath:sport.properties"/>
+    
+    <bean id="myCoach"
+    	class="com.udemy.spring.coach.FifaCoach">
+    	<constructor-arg ref="myFortune"></constructor-arg>
+    </bean>
+    
+    <bean id="myCricketCoach"
+    	class="com.udemy.spring.coach.CricketCoach">
+    	<!--  setter Injection -->
+    	<!--  property name should be same as the name in class variable name -->
+    	<property name="fortuneService" ref="myFortune"></property>
+    	
+    	<!-- Literal Injection -->
+    	<property name="emailAddress" value="${foo.email}"></property>
+    	<property name="Team" value="${foo.team}"/>
+    </bean>
+    
+    <bean id="myFortune"
+    	class="com.udemy.spring.coach.HappyFortuneService">
+    </bean>
+    
+    
+    
+    <bean id="myLoggerConfig" 
+    class="com.udemy.spring.coach.MyLoggerConfig" 
+    init-method="initLogger">
+    	<property name="rootLoggerLevel" value="FINE" />
+    	<property name="printedLoggerLevel" value="FINE"/>
+    </bean>
+    
+    
+</beans>
+
+
+
+
+
