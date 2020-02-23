@@ -6,6 +6,14 @@ public class BeanLifecycleDemoApp {
 	
 	public static void main(String[] args) {
 		
+		
+		// @PostConstruct this annotation on function run at starting
+		
+		// @PreDestroy annotation to do clean up task  {{for scope prototype ref 62}}
+		
+		//for java 9 and above ref lecture 80
+		
+		
 		//load spring config file
 		
 		ClassPathXmlApplicationContext context=

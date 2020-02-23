@@ -6,6 +6,10 @@ public class BeanScopeDemoApp {
 	
 	public static void main(String[] args) {
 		
+		
+		//@Scope("singelton/prototype") anotations can also be used on beans (coachClasses)
+		
+		
 		//load spring config file
 		
 		ClassPathXmlApplicationContext context=
@@ -24,5 +28,7 @@ public class BeanScopeDemoApp {
 		System.out.println("\nmemory loaction of alphaCoach"+alphaCoach);
 		
 		context.close();
+		
+		
 	}
 }
