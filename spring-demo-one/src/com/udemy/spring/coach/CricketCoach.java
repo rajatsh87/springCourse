@@ -23,7 +23,8 @@ public class CricketCoach implements Coach {
 
 
 	public void setEmailAddress(String emailAddress) {
-		this.emailAddress = emailAddress;
+		//System.out.println(emailAddress);
+		this.emailAddress = ""+emailAddress;
 	}
 
 

@@ -22,8 +22,8 @@
     	<property name="fortuneService" ref="myFortune"></property>
     	
     	<!-- Literal Injection -->
-    	<property name="emailAddress" value="${foo.email}"></property>
-    	<property name="Team" value="${foo.team}"/>
+    	< name="emailAddress" value="${email}"></property>
+    	<property name="Team" value="${team}"/>	
     </bean>
     
     <bean id="myFortune"
