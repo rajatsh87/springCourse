@@ -12,7 +12,8 @@ public class Customer {
 
 	private String firstName;
 	
-	@CourseCode //can give value and default error message
+	@CourseCode() //can give value and default error message
+	@NotNull(message="is required")
 	private String courseCode;
 	
 	@NotNull(message="is required")
