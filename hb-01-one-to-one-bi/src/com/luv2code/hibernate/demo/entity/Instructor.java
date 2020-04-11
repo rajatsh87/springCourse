@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToOne;  
 import javax.persistence.Table;
 
 @Entity
@@ -41,7 +41,7 @@ public class Instructor {
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="instructor_detail_id")
-	private InstructorDetail insreuctorDetail;
+	private InstructorDetail instructorDetail;
 	
 	public Instructor() {
 		
@@ -86,17 +86,17 @@ public class Instructor {
 	}
 
 	public InstructorDetail getInsreuctorDetail() {
-		return insreuctorDetail;
+		return instructorDetail;
 	}
 
 	public void setInsreuctorDetail(InstructorDetail insreuctorDetail) {
-		this.insreuctorDetail = insreuctorDetail;
+		this.instructorDetail = insreuctorDetail;
 	}
 
 	@Override
 	public String toString() {
 		return "Instructor [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", email=" + email
-				+ ", insreuctorDetail=" + insreuctorDetail + "]";
+				+ ", insreuctorDetail=" + instructorDetail+ "]";
 	}
 
 	
