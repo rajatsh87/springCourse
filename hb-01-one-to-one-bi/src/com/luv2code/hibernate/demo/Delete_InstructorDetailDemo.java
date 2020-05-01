@@ -3,6 +3,7 @@ package com.luv2code.hibernate.demo;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import com.luv2code.hibernate.demo.entity.Instructor;
 import com.luv2code.hibernate.demo.entity.InstructorDetail;
@@ -28,6 +29,14 @@ public class Delete_InstructorDetailDemo {
 			}
 			session.getTransaction().commit();
 			System.out.println("Done!");
+			
+			/*
+			//deleting using query
+			Session session=sessionFactory.getCurrentSession();
+			Query theQuery=session.createQuery("delete from Customer where id=:customerId");
+			theQuery.setParameter("customerId", c1);
+			theQuery.executeUpdate();
+			*/
 		}
 		finally {
 			session.close();
